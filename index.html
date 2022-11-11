@@ -4,85 +4,114 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kita</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<style>
+    body{
+        background-image: url(images/step1.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+</style>
 </head>
 <body>
-    <div class="top">
-        <div class="top-cont">
-            <div class="icon">
-                <a href="#"><img src="src/images/logo1.png" alt="Logo"></a>
+    <div class="container">
+        <div class="row border">
+            <div class="col-6">
+                <h1>Menu</h1>
             </div>
-            <div class="links">
+            <div class="col-6">
+                <h1>Home</h1>
+            </div>
+        </div>
+        <div class="row border" id="par">
+            <nav>
+                <ul class="nav nav-tabs">
+                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#contacts" class="nav-link">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row bg-light opacity-75 rounded-1 m-75">
+            <div class="col-sm-6">
+                <h1>Breif history</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, beatae quis dignissimos corporis tempora fugiat architecto est eveniet, commodi vitae voluptatum debitis! Ipsum illum quas, provident ut atque culpa molestiae!
+                Architecto beatae vitae quo reprehenderit culpa molestias officiis consequatur eligendi! Eligendi ut sed alias eius atque placeat, ullam porro repellat eum! Vel recusandae cumque nulla animi, nesciunt enim sunt pariatur.</p>
+                <h2>Professions</h2>
                 <ul>
-                    <li><a class="active" href="#">Home</a></li>
-                    <li><a href="src/pages/products.html">Products</a></li>
-                    <li><a href="src/pages/aboutus.html">About Us</a></li>
+                    <li>Profession</li>
+                    <li>Profession</li>
+                    <li>Profession</li>
+                    <li>Profession</li>
+                    <li>Profession</li>
+                    <li>Profession</li>
+                </ul>
+            </div>
+            <div class="col-sm-6">
+                <h2>Hobbies</h2>
+                <ul>
+                    <li>Games</li>
+                    <li>Coding</li>
+                    <li>Etc</li>
                 </ul>
             </div>
         </div>
-    </div>
-    <div class="body">
-        <h1>Welcome to Kita foundations</h1>
-        <p style="color: white;">We transform tree to funiture</p>
-        <div class="steps">
-            <div class="ste">
-                <div class="txt">
-                    <h3>From the forest</h3>
+        <div class="row rounded-1 text-light opacity-75 bg-success m-1">
+            <h1>About me</h1>
+        </div>
+        <div class="#contacts row bg-dark p-3 rounded-3 mh-60 m-0">
+            <div id="myImages" class="col-sm-3 carousel carousel-success slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#myImages" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#myImages" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#myImages" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
-                <div class="step1">
-                    <h2>step 1</h2>
-                    <p>We get this</p>
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="images/image1.jpg" class="d-block img-fluid" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Photo</h5>
+                      <p>The man</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="images/image2.jpg" class="d-block img-fluid" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Photo</h5>
+                      <p>Kita him self</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/image3.jpg" class="d-block img-fluid" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Photo</h5>
+                      <p>All me</p>
+                    </div>
+                  </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#myImages" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myImages" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <div class="ste-odd">
-                <div class="step2">
-                    <h2>Step 2</h2>
-                    <p>Turn it to this</p>
-                </div>
-                <div class="txt">
-                    <h3>Into logs</h3>
-                </div>
-            </div>
-            <div class="ste">
-                <div class="txt">
-                    <h3>logs become timber</h3>
-                </div>
-                <div class="step3">
-                    <h2>Step 3</h2>
-                    <p>And then this</p>
-                </div>
-            </div>
-            <div class="ste-odd">
-                <div class="step4">
-                    <h2>Step 4</h2>
-                    <p>Finally</p>
-                </div>
-                <div class="txt">
-                    <h3>Timber to Funiture</h3>
-                </div>
+            <div class="d-flex flex-column text-light 
+            .align-items-center justify-content-center col-sm-9">
+                <h1>Rogers Kitamirike</h1>
+                <p class="text-primary">The number one</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, odio natus. Fugit at voluptates alias eius id itaque facilis, ipsum eaque laudantium saepe voluptatem perspiciatis iusto aliquid. Unde, autem enim.</p>
             </div>
         </div>
     </div>
-    <div class="footer">
-        <div class="bot-cont">
-            <div class="txt">
-                <h4>Kita foundations</h4>
-                <p>We are number one supplier is funiture and tools to make funiture</p>
-            </div>
-            <div class="soc-links">
-                <a href="https://linkedin.com/in/kita-rog-hope-2a6a56143"><i class="fab fa-linkedin fa-2x"></i></a>
-                <a href="https://wa.me/256757035774"><i class="fab fa-whatsapp fa-2x"></i></a>
-                <a href="https://t.me/kitahope"><i class="fab fa-telegram fa-2x"></i></a>
-                <a href="https://twitter.com/KitaRoseHope"><i class="fab fa-twitter fa-2x"></i></a>
-            </div>
-            <div class="foot-note">
-                <small>&copy;Kita 2022</small>
-            </div>
-        </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/1698889877.js" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script>
+    
+</script>
 </body>
 </html>
