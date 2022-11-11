@@ -66,18 +66,45 @@ body{
     display: block;
     text-align: center;
 }
-.body h1{
-    background: rgba(9, 9, 128,0.6);
-    color: black;
+.him{
+    /*background: linear-gradient(rgba(0, 0, 0, 0.3),rgb(109, 1, 109));*/
+    color: white;
+    font-family: cursive;
+    margin: 10px;
+}
+.him .img{
+    background-image: url(../src/images/welcome.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 80%;
+    max-width: 740px;
+    margin: auto;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.him h1{
+
+    animation: glow 1s ease-in-out infinite alternate;
+}
+.him p {
+
 }
 .steps{
     display: block;
     width: 100%;
 }
 .ste, .ste-odd{
+    max-width: 800px;
     width: calc(100% - 10px);
     display: flex;
-    margin: 5px;
+    margin: 10px auto;
+    background: radial-gradient(rgba(0,0,0,0.3),rgb(0, 0, 114));
+    border-radius: 5px;
+    box-shadow: grey 0 0 0 2px,
+    black 2px 2px 2px 2px;
 }
 .ste{
     justify-content: right;
@@ -121,10 +148,8 @@ body{
     max-width: 50%;
     word-wrap: break-word;
     font-size: x-large;
-}
-.body p{
-    background: rgba(9, 9, 128,0.6);
-    
+    font-family: cursive;
+    color: white;
 }
 
 /*Products sec body*/
@@ -138,8 +163,13 @@ body{
     margin: 5px;
     width: calc(25% - 10px);
     height: auto;
-    background: rgba(0, 0, 0, 0.3);
-    box-shadow: 1px 1px 1px 2px;
+    background: repeating-linear-gradient(blue,red);
+    color: whitesmoke;
+    box-shadow: grey 0 0 0 2px, 
+    black 2px 2px 2px 2px,
+    silver 0 0 0 2px;
+    border-radius: 5px;
+    overflow: hidden;
 }
 .prod-pic{
     width: 100%;
@@ -166,6 +196,15 @@ body{
         width: calc(50% - 10px);
     }
 }
+@-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  }
 /*bottom part starts here*/
 .bot-cont{
     background: rgba(0, 0, 0, 0.8);
