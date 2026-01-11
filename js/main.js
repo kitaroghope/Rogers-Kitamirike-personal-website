@@ -89,64 +89,64 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function highlightNavLink() {
         const scrollY = window.pageYOffset;
+        let currentSection = '';
 
         sections.forEach(section => {
+            const sectionTop = section.offsetTop - 150;
             const sectionHeight = section.offsetHeight;
-            const sectionTop = section.offsetTop - 100;
-            const sectionId = section.getAttribute('id');
 
-            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${sectionId}`) {
-                        link.classList.add('active');
-                    }
-                });
+            if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${currentSection}`) {
+                link.classList.add('active');
             }
         });
     }
 
     window.addEventListener('scroll', highlightNavLink);
+    // Call once on load
+    highlightNavLink();
 
     // ===================================
-    // Contact Form Handling
+    // Contact Form Handling (Formspree)
     // ===================================
     const contactForm = document.getElementById('contact-form');
 
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
 
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-
-            // Simple validation
-            console.log(data);
-            if (!data['Your Name'] || !data['Email Address'] || !data.Message) {
-                showNotification('Please fill in all required fields.', 'error');
-                return;
-            }
-
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(data['Email Address'])) {
-                showNotification('Please enter a valid email address.', 'error');
-                return;
-            }
-
-            // Simulate form submission (replace with actual API call)
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
             submitBtn.disabled = true;
 
-            setTimeout(() => {
-                showNotification('Thank you for your message! I will get back to you soon.', 'success');
-                this.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }, 1500);
+            try {
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: new FormData(this),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    showNotification('Thank you for your message! I will get back to you soon.', 'success');
+                    this.reset();
+                } else {
+                    showNotification('Something went wrong. Please try again.', 'error');
+                }
+            } catch (error) {
+                showNotification('Something went wrong. Please try again.', 'error');
+            }
+
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
         });
     }
 

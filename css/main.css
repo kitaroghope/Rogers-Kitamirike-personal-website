@@ -510,6 +510,28 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===================================
+   Prevent Horizontal Overflow
+   =================================== */
+
+body {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    overflow: hidden;
+}
+
+/* Active nav link style */
+.nav-link.active {
+    color: var(--accent-teal) !important;
+}
+
+/* ===================================
    Responsive Design
    =================================== */
 
@@ -525,6 +547,39 @@ h1, h2, h3, h4, h5, h6 {
 
     .section-title {
         font-size: 2rem;
+    }
+
+    /* Mobile Navbar Fix */
+    .navbar {
+        background: var(--primary-navy) !important;
+        padding: 0.75rem 0;
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--primary-navy);
+        padding: 1rem;
+        z-index: 1000;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-link {
+        color: rgba(255, 255, 255, 0.9) !important;
+        padding: 0.75rem 1rem !important;
+        border-radius: 4px;
+        margin-bottom: 0.25rem;
+    }
+
+    .nav-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-link.active {
+        background: var(--accent-teal);
+        color: white !important;
     }
 }
 
