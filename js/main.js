@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
             submitBtn.disabled = true;
-
+            console.log(this.action);
             try {
                 const response = await fetch(this.action, {
                     method: 'POST',
@@ -134,6 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         'Accept': 'application/json'
                     }
                 });
+                console.log(response);
 
                 if (response.ok) {
                     showNotification('Thank you for your message! I will get back to you soon.', 'success');
