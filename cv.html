@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Rogers Kitamirike - CV Showcase</title>
+    <meta name="description" content="Full Stack Software Developer CV - Rogers Kitamirike">
+    <meta name="author" content="Rogers Kitamirike">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link href="css/cv.css" rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+
+    <!-- Navigation Dots -->
+    <nav class="nav-dots">
+        <a href="#hero" class="nav-dot active" data-section="0">
+            <span class="tooltip">Home</span>
+        </a>
+        <a href="#about" class="nav-dot" data-section="1">
+            <span class="tooltip">About</span>
+        </a>
+        <a href="#skills" class="nav-dot" data-section="2">
+            <span class="tooltip">Skills</span>
+        </a>
+        <a href="#projects" class="nav-dot" data-section="3">
+            <span class="tooltip">Projects</span>
+        </a>
+        <a href="#experience" class="nav-dot" data-section="4">
+            <span class="tooltip">Experience</span>
+        </a>
+        <a href="#education" class="nav-dot" data-section="5">
+            <span class="tooltip">Education</span>
+        </a>
+        <a href="#contact" class="nav-dot" data-section="6">
+            <span class="tooltip">Contact</span>
+        </a>
+    </nav>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-hint">
+        <span>Scroll</span>
+        <i class="fas fa-chevron-right"></i>
+    </div>
+
+    <!-- Back Button -->
+    <a href="index.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back to Portfolio</span>
+    </a>
+
+    <!-- Horizontal Container -->
+    <main class="horizontal-scroll">
+        <!-- Section 1: Hero -->
+        <section id="hero" class="section section-hero">
+            <div class="hero-bg">
+                <div class="floating-shape shape-1"></div>
+                <div class="floating-shape shape-2"></div>
+                <div class="floating-shape shape-3"></div>
+                <div class="floating-shape shape-4"></div>
+                <div class="floating-shape shape-5"></div>
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge" data-aos="fade-down" data-aos-delay="200">
+                        <span class="badge-dot"></span>
+                        Available for hire
+                    </div>
+                    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="400">
+                        <span class="title-line">Rogers</span>
+                        <span class="title-line highlight">Kitamirike</span>
+                    </h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="600">
+                        <span class="typed-text"></span>
+                    </p>
+                    <div class="hero-cta" data-aos="fade-up" data-aos-delay="800">
+                        <a href="#contact" class="btn btn-primary-custom">
+                            <span>Let's Talk</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </a>
+                        <a href="#projects" class="btn btn-outline-custom">
+                            <span>View Work</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="hero-stats" data-aos="fade-up" data-aos-delay="1000">
+                        <div class="stat">
+                            <span class="stat-number" data-count="5">0</span>
+                            <span class="stat-label">+ Years Exp</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="20">0</span>
+                            <span class="stat-label">Projects Done</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="15">0</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="image-frame">
+                        <img src="images/profile.jpg" alt="Rogers Kitamirike" onerror="this.src='https://placehold.co/400x400?text=RK'">
+                        <div class="frame-corner tl"></div>
+                        <div class="frame-corner tr"></div>
+                        <div class="frame-corner bl"></div>
+                        <div class="frame-corner br"></div>
+                    </div>
+                    <div class="floating-badge b1">
+                        <i class="fab fa-react"></i>
+                        <span>React</span>
+                    </div>
+                    <div class="floating-badge b2">
+                        <i class="fab fa-node-js"></i>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="floating-badge b3">
+                        <i class="fas fa-database"></i>
+                        <span>SQL</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: About -->
+        <section id="about" class="section section-about">
+            <div class="about-bg">
+                <div class="grid-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image-wrapper" data-aos="fade-right" data-aos-duration="800">
+                        <div class="about-image">
+                            <img src="images/profile.jpg" alt="About Rogers" onerror="this.src='https://placehold.co/500x600?text=About'">
+                            <div class="experience-badge">
+                                <span class="years">5+</span>
+                                <span class="text">Years Experience</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-content" data-aos="fade-left" data-aos-duration="800">
+                        <span class="section-tag">About Me</span>
+                        <h2 class="section-title">Building Digital<br><span class="highlight">Experiences</span></h2>
+                        <p class="about-text">
+                            I'm a passionate Full Stack Developer with expertise in building modern web applications.
+                            My journey started in 2013, and I've since worked on diverse projects ranging from
+                            school management systems to AI-powered chatbots.
+                        </p>
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="highlight-text">
+                                    <h4>Clean Code</h4>
+                                    <p>Maintainable, scalable solutions</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <div class="highlight-text">
+                                    <h4>Problem Solver</h4>
+                                    <p>Creative solutions to complex problems</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="highlight-text">
+                                    <h4>Team Player</h4>
+                                    <p>Collaborative and communicative</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-info">
+                            <div class="info-item">
+                                <span class="label">Name</span>
+                                <span class="value">Rogers Kitamirike</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Location</span>
+                                <span class="value">Uganda</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Email</span>
+                                <span class="value">kitarogz@gmail.com</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Availability</span>
+                                <span class="value available">Open to work</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Skills -->
+        <section id="skills" class="section section-skills">
+            <div class="skills-bg">
+                <div class="orbit-ring"></div>
+                <div class="orbit-ring ring-2"></div>
+            </div>
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-tag">What I Do</span>
+                    <h2 class="section-title">Technical <span class="highlight">Skills</span></h2>
+                    <p class="section-subtitle">Technologies and tools I use to bring ideas to life</p>
+                </div>
+                <div class="skills-container">
+                    <!-- Frontend Card -->
+                    <div class="skill-card" data-aos="flip-left" data-aos-delay="100">
+                        <div class="card-glow"></div>
+                        <div class="card-header">
+                            <div class="skill-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3>Frontend</h3>
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <span class="skill-name">HTML5/CSS3</span>
+                                <div class="skill-bar"><div class="skill-progress" style="--progress: 95%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">JavaScript</span>
+                                <div class="skill-bar"><div class="skill-progress" style="--progress: 90%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">React</span>
+                                <div class="skill-bar"><div class="skill-progress" style="--progress: 85%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Flutter</span>
+                                <div class="skill-bar"><div class="skill-progress" style="--progress: 80%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Bootstrap 5</span>
+                                <div class="skill-bar"><div class="skill-progress" style="--progress: 92%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Backend Card -->
+                    <div class="skill-card" data-aos="flip-left" data-aos-delay="200">
+                        <div class="card-glow"></div>
+                        <div class="card-header">
+                            <div class="skill-icon backend">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h3>Backend</h3>
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Node.js</span>
+                                <div class="skill-bar"><div class="skill-progress" style="--progress: 88%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Python</span>
+                                <div class="skill-bar"><div class="skill-progress" style="--progress: 82%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">PHP</span>
+                                <div class="skill-bar"><div class="skill-progress" style="--progress: 85%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">MongoDB</span>
+                                <div class="skill-bar"><div class="skill-progress" style="--progress: 80%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">SQL</span>
+                                <div class="skill-bar"><div class="skill-progress" style="--progress: 90%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tools Card -->
+                    <div class="skill-card" data-aos="flip-left" data-aos-delay="300">
+                        <div class="card-glow"></div>
+                        <div class="card-header">
+                            <div class="skill-icon tools">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h3>Tools & DevOps</h3>
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Git/GitHub</span>
+                                <div class="skill-bar"><div class="skill-progress" style="--progress: 92%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">VS Code</span>
+                                <div class="skill-bar"><div class="skill-progress" style="--progress: 98%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Postman</span>
+                                <div class="skill-bar"><div class="skill-progress" style="--progress: 88%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Figma</span>
+                                <div class="skill-bar"><div class="skill-progress" style="--progress: 75%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">XAMPP</span>
+                                <div class="skill-bar"><div class="skill-progress" style="--progress: 90%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tech Tags -->
+                <div class="tech-tags" data-aos="fade-up" data-aos-delay="400">
+                    <span class="tag">React Native</span>
+                    <span class="tag">Express</span>
+                    <span class="tag">REST APIs</span>
+                    <span class="tag">Django</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">jQuery</span>
+                    <span class="tag">Adobe XD</span>
+                    <span class="tag">Firebase</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">AWS</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Projects -->
+        <section id="projects" class="section section-projects">
+            <div class="projects-bg">
+                <div class="floating-cards"></div>
+            </div>
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-tag">Featured Work</span>
+                    <h2 class="section-title">My <span class="highlight">Projects</span></h2>
+                    <p class="section-subtitle">A selection of my recent work and experiments</p>
+                </div>
+                <div class="projects-showcase">
+                    <!-- Project 1 -->
+                    <div class="project-card-large" data-aos="zoom-in-up" data-aos-delay="100">
+                        <div class="project-visual">
+                            <img src="images/sms-preview.PNG" alt="School Management System" onerror="this.src='https://placehold.co/600x400?text=SMS'">
+                            <div class="project-overlay">
+                                <a href="https://github.com/kitaroghope/Friends-of-children-SMS/tree/main/App" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category">Web Application</span>
+                            <h3>School Management System</h3>
+                            <p>Comprehensive multi-school management built with Django 6.0.1 & PostgreSQL. Features offline data entry, role-based access, and complete audit trails.</p>
+                            <div class="project-tech">
+                                <span>Django</span>
+                                <span>PostgreSQL</span>
+                                <span>Offline Capable</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="project-card-large" data-aos="zoom-in-up" data-aos-delay="200">
+                        <div class="project-visual">
+                            <img src="images/darewell-preview.PNG" alt="Truth or Dare Game" onerror="this.src='https://placehold.co/600x400?text=Truth+or+Dare'">
+                            <div class="project-overlay">
+                                <a href="https://darewell-civ1.onrender.com/" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category">Real-time Game</span>
+                            <h3>Truth or Dare - RPS Edition</h3>
+                            <p>Multiplayer party game! Challenge friends with Rock Paper Scissors to decide who faces truth or dare. Real-time WebSocket updates.</p>
+                            <div class="project-tech">
+                                <span>Node.js</span>
+                                <span>WebSockets</span>
+                                <span>Multiplayer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="project-card-large" data-aos="zoom-in-up" data-aos-delay="300">
+                        <div class="project-visual">
+                            <img src="images/chatbot-preview.PNG" alt="AI Chatbot" onerror="this.src='https://placehold.co/600x400?text=AI+Chatbot'">
+                            <div class="project-overlay">
+                                <a href="https://full-chatbot.code.ug/" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category">AI/ML Application</span>
+                            <h3>AI Chatbot</h3>
+                            <p>Smart AI assistant with document search and WhatsApp integration. Powers Bugema University Assistant for student queries.</p>
+                            <div class="project-tech">
+                                <span>AI/ML</span>
+                                <span>WhatsApp API</span>
+                                <span>Node.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="projects-more" data-aos="fade-up">
+                    <a href="https://github.com/kitaroghope" target="_blank" class="btn btn-outline-custom">
+                        <i class="fab fa-github"></i>
+                        <span>View All Projects</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Experience -->
+        <section id="experience" class="section section-experience">
+            <div class="experience-bg">
+                <div class="timeline-line"></div>
+            </div>
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-tag">Journey</span>
+                    <h2 class="section-title">Work <span class="highlight">Experience</span></h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+                        <div class="timeline-marker">
+                            <span class="marker-dot"></span>
+                            <span class="marker-line"></span>
+                        </div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Feb 2025 - Present</span>
+                            <h4>Junior Software Developer</h4>
+                            <span class="timeline-company">Dealers Eye | Kampala, Uganda</span>
+                            <p>Building cross-platform mobile applications using Flutter and developing backend services with Node.js.</p>
+                            <div class="timeline-tags">
+                                <span>Flutter</span>
+                                <span>Node.js</span>
+                                <span>Mobile</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
+                        <div class="timeline-marker">
+                            <span class="marker-dot"></span>
+                            <span class="marker-line"></span>
+                        </div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Jun 2025 - Present</span>
+                            <h4>Backend Developer - React Native</h4>
+                            <span class="timeline-company">Auto Swift | Kampala, Uganda (Remote)</span>
+                            <p>Developing mobile applications using React Native. Building and maintaining backend APIs.</p>
+                            <div class="timeline-tags">
+                                <span>React Native</span>
+                                <span>Backend APIs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
+                        <div class="timeline-marker">
+                            <span class="marker-dot"></span>
+                            <span class="marker-line"></span>
+                        </div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Nov 2019 - Jan 2021</span>
+                            <h4>Database Developer</h4>
+                            <span class="timeline-company">Biva Organic | Kampala, Uganda</span>
+                            <p>Designed and deployed Microsoft Access database solution replacing manual record keeping.</p>
+                            <div class="timeline-tags">
+                                <span>Database Design</span>
+                                <span>MS Access</span>
+                                <span>Training</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-aos="fade-right" data-aos-delay="400">
+                        <div class="timeline-marker">
+                            <span class="marker-dot"></span>
+                        </div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Mar 2013 - Aug 2016</span>
+                            <h4>IT Club Member & Mentor</h4>
+                            <span class="timeline-company">Bugema Adventist Secondary School | Uganda</span>
+                            <p>Developed foundational skills in HTML, CSS, JavaScript. Mentored new members.</p>
+                            <div class="timeline-tags">
+                                <span>Web Development</span>
+                                <span>Mentoring</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Education -->
+        <section id="education" class="section section-education">
+            <div class="education-bg">
+                <div class="degree-icon"></div>
+            </div>
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-tag">Background</span>
+                    <h2 class="section-title"><span class="highlight">Education</span></h2>
+                </div>
+                <div class="education-grid">
+                    <div class="education-card" data-aos="flip-up" data-aos-delay="100">
+                        <div class="card-pattern"></div>
+                        <div class="education-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <span class="edu-date">2022 - 2025</span>
+                        <h3>Bachelor of Software Engineering</h3>
+                        <span class="edu-school">Bugema University</span>
+                        <p>Focus on web technologies, software architecture, and database systems.</p>
+                    </div>
+                    <div class="education-card" data-aos="flip-up" data-aos-delay="200">
+                        <div class="card-pattern"></div>
+                        <div class="education-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <span class="edu-date">2015 - 2016</span>
+                        <h3>Advanced Level Certificate</h3>
+                        <span class="edu-school">Secondary School</span>
+                        <p>Physics, Chemistry, Mathematics (PCM) combination.</p>
+                    </div>
+                    <div class="education-card" data-aos="flip-up" data-aos-delay="300">
+                        <div class="card-pattern"></div>
+                        <div class="education-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <span class="edu-date">2011 - 2014</span>
+                        <h3>Ordinary Level Certificate</h3>
+                        <span class="edu-school">Secondary School</span>
+                        <p>Science combination with excellent performance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Contact -->
+        <section id="contact" class="section section-contact">
+            <div class="contact-bg">
+                <div class="contact-shape shape-1"></div>
+                <div class="contact-shape shape-2"></div>
+            </div>
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-info" data-aos="fade-right">
+                        <span class="section-tag">Get In Touch</span>
+                        <h2 class="section-title">Let's Work<br><span class="highlight">Together</span></h2>
+                        <p class="contact-text">Have a project in mind? I'd love to hear about it. Let's create something amazing together.</p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <span class="label">Email</span>
+                                    <a href="mailto:kitarogz@gmail.com">kitarogz@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <span class="label">Phone</span>
+                                    <a href="tel:+256757035774">+256 757 035 774</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <span class="label">Location</span>
+                                    <span>Kampala, Uganda</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="social-links-large">
+                            <a href="https://linkedin.com/in/kitaroghope" target="_blank" class="social-btn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/kitaroghope" target="_blank" class="social-btn">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://twitter.com/KitaRogHope" target="_blank" class="social-btn">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://wa.me/256757035774" target="_blank" class="social-btn">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-form-wrapper" data-aos="fade-left">
+                        <form action="https://formspree.io/f/xlggrkvw" method="POST" class="contact-form">
+                            <div class="form-group">
+                                <label class="form-label">Your Name</label>
+                                <input type="text" name="name" class="form-control" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" name="email" class="form-control" placeholder="john@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Subject</label>
+                                <input type="text" name="subject" class="form-control" placeholder="Project Inquiry">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Message</label>
+                                <textarea name="message" class="form-control" rows="5" placeholder="Tell me about your project..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary-custom btn-full">
+                                <span>Send Message</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <footer class="footer-simple">
+                    <p>&copy; <span id="year"></span> Rogers Kitamirike. All rights reserved.</p>
+                </footer>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/cv.js"></script>
+</body>
+</html>
