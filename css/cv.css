@@ -43,22 +43,20 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Horizontal Scroll Container */
+/* Horizontal Scroll Container - converted to vertical for better content flow */
 .horizontal-scroll {
-    display: flex;
-    flex-direction: row;
-    width: 700%;
-    height: 100vh;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
     scroll-behavior: smooth;
     scrollbar-width: thin;
     scrollbar-color: var(--accent-teal) var(--bg-dark);
 }
 
 .horizontal-scroll::-webkit-scrollbar {
-    height: 8px;
+    width: 8px;
 }
 
 .horizontal-scroll::-webkit-scrollbar-track {
@@ -76,14 +74,14 @@ body {
 
 /* Sections */
 .section {
-    min-width: 100vw;
-    height: 100vh;
-    scroll-snap-align: start;
+    min-width: 100%;
+    min-height: auto;
+    scroll-snap-align: none;
     position: relative;
     display: flex;
     align-items: center;
     padding: 80px 0;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .container {
@@ -1405,6 +1403,11 @@ body {
     color: var(--text-secondary);
 }
 
+.form-label .optional {
+    font-weight: 400;
+    opacity: 0.7;
+}
+
 .form-control {
     padding: 14px 18px;
     background: rgba(255, 255, 255, 0.05);
@@ -1595,4 +1598,54 @@ textarea.form-control {
     .social-links-large {
         flex-wrap: wrap;
     }
+}
+
+/* ==========================================
+   Reduced Motion Preferences
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .floating-shape,
+    .floating-badge,
+    .orbit-ring,
+    .experience-badge {
+        animation: none !important;
+    }
+
+    .scroll-hint,
+    .badge-dot {
+        animation: none !important;
+    }
+}
+
+/* ==========================================
+   Focus Visible Styles
+   ========================================== */
+
+:focus-visible {
+    outline: 2px solid var(--accent-teal);
+    outline-offset: 2px;
+}
+
+.nav-dot:focus-visible,
+.back-btn:focus-visible,
+.btn:focus-visible,
+.social-btn:focus-visible,
+.project-link:focus-visible {
+    outline: 2px solid var(--accent-teal);
+    outline-offset: 2px;
 }

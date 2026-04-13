@@ -1,11 +1,11 @@
 /**
- * CV Showcase - Horizontal Scroll JavaScript
+ * CV Showcase - Vertical Scroll JavaScript
  */
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all features
     initYearDisplay();
-    initHorizontalScroll();
+    initVerticalScroll();
     initTypedText();
     initSkillBars();
     initCounterAnimation();
@@ -24,133 +24,36 @@ function initYearDisplay() {
 }
 
 /**
- * Horizontal Scroll with Mouse Wheel
+ * Vertical Scroll with Section Tracking
  */
-function initHorizontalScroll() {
+function initVerticalScroll() {
     const container = document.querySelector('.horizontal-scroll');
     const sections = document.querySelectorAll('.section');
-    const scrollHint = document.querySelector('.scroll-hint');
-    let isScrolling = false;
+    const progressFill = document.querySelector('.progress-fill');
+    const navDots = document.querySelectorAll('.nav-dot');
     let currentSection = 0;
     const totalSections = sections.length;
 
-    // Hide scroll hint after first scroll
-    if (scrollHint) {
-        container.addEventListener('scroll', function() {
-            scrollHint.style.opacity = '0';
-            scrollHint.style.transition = 'opacity 0.3s';
-        }, { once: true });
-    }
+    // Update progress bar and nav dots on scroll
+    container.addEventListener('scroll', function() {
+        const scrollTop = container.scrollTop;
+        const scrollHeight = container.scrollHeight - container.clientHeight;
 
-    // Mouse wheel horizontal scroll
-    container.addEventListener('wheel', function(e) {
-        e.preventDefault();
+        // Calculate current section based on scroll position
+        const scrollProgress = scrollTop / scrollHeight;
+        currentSection = Math.min(Math.floor(scrollProgress * totalSections), totalSections - 1);
 
-        if (isScrolling) return;
-
-        isScrolling = true;
-
-        if (e.deltaY > 0 || e.deltaX > 0) {
-            // Scroll right
-            if (currentSection < totalSections - 1) {
-                currentSection++;
-                scrollToSection(currentSection);
-            }
-        } else {
-            // Scroll left
-            if (currentSection > 0) {
-                currentSection--;
-                scrollToSection(currentSection);
-            }
-        }
-
-        setTimeout(() => {
-            isScrolling = false;
-        }, 800);
-    }, { passive: false });
-
-    // Touch swipe support for mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    container.addEventListener('touchstart', function(e) {
-        touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-
-    container.addEventListener('touchend', function(e) {
-        if (isScrolling) return;
-
-        touchEndX = e.changedTouches[0].screenX;
-        const diff = touchStartX - touchEndX;
-
-        if (Math.abs(diff) > 50) {
-            isScrolling = true;
-
-            if (diff > 0 && currentSection < totalSections - 1) {
-                // Swipe left - next section
-                currentSection++;
-                scrollToSection(currentSection);
-            } else if (diff < 0 && currentSection > 0) {
-                // Swipe right - previous section
-                currentSection--;
-                scrollToSection(currentSection);
-            }
-
-            setTimeout(() => {
-                isScrolling = false;
-            }, 800);
-        }
-    }, { passive: true });
-
-    // Keyboard navigation
-    document.addEventListener('keydown', function(e) {
-        if (isScrolling) return;
-
-        isScrolling = true;
-
-        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-            if (currentSection < totalSections - 1) {
-                currentSection++;
-                scrollToSection(currentSection);
-            }
-        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-            if (currentSection > 0) {
-                currentSection--;
-                scrollToSection(currentSection);
-            }
-        }
-
-        setTimeout(() => {
-            isScrolling = false;
-        }, 800);
-    });
-
-    // Scroll to section function
-    function scrollToSection(index) {
-        const targetSection = sections[index];
-        if (targetSection) {
-            targetSection.scrollIntoView({ behavior: 'smooth' });
-            updateProgressBar(index);
-            updateNavDots(index);
-        }
-    }
-
-    // Update progress bar
-    function updateProgressBar(index) {
-        const progressFill = document.querySelector('.progress-fill');
+        // Update progress bar
         if (progressFill) {
-            const progress = ((index + 1) / totalSections) * 100;
+            const progress = ((currentSection + 1) / totalSections) * 100;
             progressFill.style.width = `${progress}%`;
         }
-    }
 
-    // Update navigation dots
-    function updateNavDots(index) {
-        const dots = document.querySelectorAll('.nav-dot');
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === index);
+        // Update nav dots
+        navDots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentSection);
         });
-    }
+    });
 
     // Intersection Observer for section tracking
     const observer = new IntersectionObserver((entries) => {
@@ -164,9 +67,22 @@ function initHorizontalScroll() {
                 }
             }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.3 });
 
     sections.forEach(section => observer.observe(section));
+
+    function updateProgressBar(index) {
+        if (progressFill) {
+            const progress = ((index + 1) / totalSections) * 100;
+            progressFill.style.width = `${progress}%`;
+        }
+    }
+
+    function updateNavDots(index) {
+        navDots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+    }
 }
 
 /**
@@ -260,14 +176,18 @@ function animateCounter(element, target) {
  */
 function initNavigationDots() {
     const dots = document.querySelectorAll('.nav-dot');
+    const container = document.querySelector('.horizontal-scroll');
 
     dots.forEach(dot => {
         dot.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
-            if (targetSection) {
-                targetSection.scrollIntoView({ behavior: 'smooth' });
+            if (targetSection && container) {
+                container.scrollTo({
+                    top: targetSection.offsetTop,
+                    behavior: 'smooth'
+                });
             }
         });
     });
@@ -314,8 +234,9 @@ function initMouseParallax() {
 }
 
 /**
- * Smooth scroll for anchor links
+ * Smooth scroll for anchor links - scroll container instead of window
  */
+const container = document.querySelector('.horizontal-scroll');
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const targetId = this.getAttribute('href');
@@ -323,8 +244,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
         e.preventDefault();
         const targetSection = document.querySelector(targetId);
-        if (targetSection) {
-            targetSection.scrollIntoView({ behavior: 'smooth' });
+        if (targetSection && container) {
+            container.scrollTo({
+                top: targetSection.offsetTop,
+                behavior: 'smooth'
+            });
         }
     });
 });

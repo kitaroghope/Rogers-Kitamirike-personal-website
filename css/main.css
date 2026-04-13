@@ -532,6 +532,23 @@ section {
 }
 
 /* ===================================
+   Focus Visible Styles
+   =================================== */
+
+:focus-visible {
+    outline: 2px solid var(--accent-teal);
+    outline-offset: 2px;
+}
+
+.nav-link:focus-visible,
+.btn:focus-visible,
+.social-link:focus-visible,
+.project-links .btn:focus-visible {
+    outline: 2px solid var(--accent-teal);
+    outline-offset: 2px;
+}
+
+/* ===================================
    Responsive Design
    =================================== */
 
@@ -639,5 +656,42 @@ section {
 
     .contact-form-card {
         padding: 1.5rem;
+    }
+}
+
+/* ===================================
+   Reduced Motion Preferences
+   =================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .hero-image img {
+        animation: none !important;
+    }
+
+    .skill-badge:hover {
+        transform: none !important;
+    }
+
+    .social-link:hover {
+        transform: none !important;
+    }
+
+    .card:hover {
+        transform: none !important;
     }
 }

@@ -119,7 +119,7 @@
                 </div>
                 <div class="hero-image" data-aos="zoom-in" data-aos-delay="500">
                     <div class="image-frame">
-                        <img src="images/profile.jpg" alt="Rogers Kitamirike" onerror="this.src='https://placehold.co/400x400?text=RK'">
+                        <img src="images/profile.jpg" alt="Rogers Kitamirike" width="350" height="350">
                         <div class="frame-corner tl"></div>
                         <div class="frame-corner tr"></div>
                         <div class="frame-corner bl"></div>
@@ -150,7 +150,7 @@
                 <div class="about-grid">
                     <div class="about-image-wrapper" data-aos="fade-right" data-aos-duration="800">
                         <div class="about-image">
-                            <img src="images/profile.jpg" alt="About Rogers" onerror="this.src='https://placehold.co/500x600?text=About'">
+                            <img src="images/profile.jpg" alt="About Rogers" width="500" height="600">
                             <div class="experience-badge">
                                 <span class="years">5+</span>
                                 <span class="text">Years Experience</span>
@@ -358,9 +358,9 @@
                     <!-- Project 1 -->
                     <div class="project-card-large" data-aos="zoom-in-up" data-aos-delay="100">
                         <div class="project-visual">
-                            <img src="images/sms-preview.PNG" alt="School Management System" onerror="this.src='https://placehold.co/600x400?text=SMS'">
+                            <img src="images/sms-preview.PNG" alt="School Management System" width="600" height="400">
                             <div class="project-overlay">
-                                <a href="https://github.com/kitaroghope/Friends-of-children-SMS/tree/main/App" target="_blank" class="project-link">
+                                <a href="https://github.com/kitaroghope/Friends-of-children-SMS/tree/main/App" target="_blank" rel="noopener noreferrer" class="project-link">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
@@ -379,9 +379,9 @@
                     <!-- Project 2 -->
                     <div class="project-card-large" data-aos="zoom-in-up" data-aos-delay="200">
                         <div class="project-visual">
-                            <img src="images/darewell-preview.PNG" alt="Truth or Dare Game" onerror="this.src='https://placehold.co/600x400?text=Truth+or+Dare'">
+                            <img src="images/darewell-preview.PNG" alt="Truth or Dare Game" width="600" height="400">
                             <div class="project-overlay">
-                                <a href="https://darewell-civ1.onrender.com/" target="_blank" class="project-link">
+                                <a href="https://darewell-civ1.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-link">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
@@ -400,9 +400,9 @@
                     <!-- Project 3 -->
                     <div class="project-card-large" data-aos="zoom-in-up" data-aos-delay="300">
                         <div class="project-visual">
-                            <img src="images/chatbot-preview.PNG" alt="AI Chatbot" onerror="this.src='https://placehold.co/600x400?text=AI+Chatbot'">
+                            <img src="images/chatbot-preview.PNG" alt="AI Chatbot" width="600" height="400">
                             <div class="project-overlay">
-                                <a href="https://full-chatbot.code.ug/" target="_blank" class="project-link">
+                                <a href="https://full-chatbot.code.ug/" target="_blank" rel="noopener noreferrer" class="project-link">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
@@ -420,7 +420,7 @@
                     </div>
                 </div>
                 <div class="projects-more" data-aos="fade-up">
-                    <a href="https://github.com/kitaroghope" target="_blank" class="btn btn-outline-custom">
+                    <a href="https://github.com/kitaroghope" target="_blank" rel="noopener noreferrer" class="btn btn-outline-custom">
                         <i class="fab fa-github"></i>
                         <span>View All Projects</span>
                     </a>
@@ -595,37 +595,37 @@
                             </div>
                         </div>
                         <div class="social-links-large">
-                            <a href="https://linkedin.com/in/kitaroghope" target="_blank" class="social-btn">
+                            <a href="https://linkedin.com/in/kitaroghope" target="_blank" rel="noopener noreferrer" class="social-btn">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="https://github.com/kitaroghope" target="_blank" class="social-btn">
+                            <a href="https://github.com/kitaroghope" target="_blank" rel="noopener noreferrer" class="social-btn">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="https://twitter.com/KitaRogHope" target="_blank" class="social-btn">
+                            <a href="https://twitter.com/KitaRogHope" target="_blank" rel="noopener noreferrer" class="social-btn">
                                 <i class="fab fa-twitter"></i>
                             </a>
-                            <a href="https://wa.me/256757035774" target="_blank" class="social-btn">
+                            <a href="https://wa.me/256757035774" target="_blank" rel="noopener noreferrer" class="social-btn">
                                 <i class="fab fa-whatsapp"></i>
                             </a>
                         </div>
                     </div>
                     <div class="contact-form-wrapper" data-aos="fade-left">
-                        <form action="https://formspree.io/f/xlggrkvw" method="POST" class="contact-form">
+                        <form action="https://formspree.io/f/xlggrkvw" method="POST" class="contact-form" id="cv-contact-form">
                             <div class="form-group">
-                                <label class="form-label">Your Name</label>
-                                <input type="text" name="name" class="form-control" placeholder="John Doe" required>
+                                <label for="cv-name" class="form-label">Your Name</label>
+                                <input type="text" name="name" id="cv-name" class="form-control" placeholder="John Doe" autocomplete="name" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Email Address</label>
-                                <input type="email" name="email" class="form-control" placeholder="john@example.com" required>
+                                <label for="cv-email" class="form-label">Email Address</label>
+                                <input type="email" name="email" id="cv-email" class="form-control" placeholder="john@example.com" autocomplete="email" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Subject</label>
-                                <input type="text" name="subject" class="form-control" placeholder="Project Inquiry">
+                                <label for="cv-subject" class="form-label">Subject <span class="optional">(optional)</span></label>
+                                <input type="text" name="subject" id="cv-subject" class="form-control" placeholder="Project Inquiry">
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Message</label>
-                                <textarea name="message" class="form-control" rows="5" placeholder="Tell me about your project..." required></textarea>
+                                <label for="cv-message" class="form-label">Message</label>
+                                <textarea name="message" id="cv-message" class="form-control" rows="5" placeholder="Tell me about your project..." required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary-custom btn-full">
                                 <span>Send Message</span>
@@ -646,6 +646,7 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
     <!-- Custom JavaScript -->
+    <script src="js/image-fallback.js"></script>
     <script src="js/cv.js"></script>
 </body>
 </html>

@@ -125,7 +125,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
             submitBtn.disabled = true;
-            console.log(this.action);
             try {
                 const response = await fetch(this.action, {
                     method: 'POST',
@@ -134,7 +133,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         'Accept': 'application/json'
                     }
                 });
-                console.log(response);
 
                 if (response.ok) {
                     showNotification('Thank you for your message! I will get back to you soon.', 'success');
@@ -256,54 +254,4 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.transform = 'translateY(0)';
         });
     });
-
-    // ===================================
-    // Counter Animation for Stats
-    // ===================================
-    const counters = document.querySelectorAll('.stat-number');
-
-    const animateCounter = (counter) => {
-        const target = parseInt(counter.getAttribute('data-target'));
-        const duration = 2000;
-        const step = target / (duration / 16);
-        let current = 0;
-
-        const updateCounter = () => {
-            current += step;
-            if (current < target) {
-                counter.textContent = Math.floor(current);
-                requestAnimationFrame(updateCounter);
-            } else {
-                counter.textContent = target;
-            }
-        };
-
-        updateCounter();
-    };
-
-    // ===================================
-    // Lazy Loading for Images
-    // ===================================
-    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src || img.src;
-                    img.removeAttribute('loading');
-                    observer.unobserve(img);
-                }
-            });
-        });
-
-        lazyImages.forEach(img => imageObserver.observe(img));
-    }
-
-    // ===================================
-    // Console Welcome Message
-    // ===================================
-    console.log('%c Welcome to Rogers Portfolio! ', 'background: #0f172a; color: #0d9488; font-size: 20px; padding: 10px;');
-    console.log('%c Built with Bootstrap 5, AOS, and Typed.js ', 'color: #64748b; font-size: 12px;');
 });
