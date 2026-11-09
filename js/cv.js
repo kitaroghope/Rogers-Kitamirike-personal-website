@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initTypedText();
     initSkillBars();
     initCounterAnimation();
-    initNavigationDots();
     initMouseParallax();
 });
 
@@ -34,26 +33,18 @@ function initVerticalScroll() {
     let currentSection = 0;
     const totalSections = sections.length;
 
-    // Update progress bar and nav dots on scroll
-    container.addEventListener('scroll', function() {
-        const scrollTop = container.scrollTop;
-        const scrollHeight = container.scrollHeight - container.clientHeight;
-
-        // Calculate current section based on scroll position
-        const scrollProgress = scrollTop / scrollHeight;
-        currentSection = Math.min(Math.floor(scrollProgress * totalSections), totalSections - 1);
-
-        // Update progress bar
-        if (progressFill) {
-            const progress = ((currentSection + 1) / totalSections) * 100;
-            progressFill.style.width = `${progress}%`;
-        }
-
-        // Update nav dots
-        navDots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === currentSection);
+    // The document scrolls vertically; the main wrapper has no fixed height.
+    function updateFromScroll() {
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (progressFill) progressFill.style.width = `${scrollHeight > 0 ? window.scrollY / scrollHeight * 100 : 0}%`;
+        sections.forEach((section, i) => {
+            if (section.getBoundingClientRect().top <= window.innerHeight * 0.35) currentSection = i;
         });
-    });
+        updateNavDots(currentSection);
+    }
+    window.addEventListener('scroll', updateFromScroll, { passive: true });
+    window.addEventListener('resize', updateFromScroll);
+    updateFromScroll();
 
     // Intersection Observer for section tracking
     const observer = new IntersectionObserver((entries) => {
@@ -62,7 +53,7 @@ function initVerticalScroll() {
                 const index = Array.from(sections).indexOf(entry.target);
                 if (index !== -1) {
                     currentSection = index;
-                    updateProgressBar(index);
+                    updateFromScroll();
                     updateNavDots(index);
                 }
             }
@@ -71,12 +62,6 @@ function initVerticalScroll() {
 
     sections.forEach(section => observer.observe(section));
 
-    function updateProgressBar(index) {
-        if (progressFill) {
-            const progress = ((index + 1) / totalSections) * 100;
-            progressFill.style.width = `${progress}%`;
-        }
-    }
 
     function updateNavDots(index) {
         navDots.forEach((dot, i) => {
@@ -93,11 +78,11 @@ function initTypedText() {
     if (!typedElement) return;
 
     const strings = [
-        'Full Stack Developer',
+        'Backend & Full-Stack Engineer',
         'Problem Solver',
         'Flutter Developer',
         'Backend Engineer',
-        'UI/UX Enthusiast'
+        'Open-Source Developer'
     ];
 
     // Create typed instance
@@ -172,28 +157,6 @@ function animateCounter(element, target) {
 }
 
 /**
- * Navigation Dots Click Handler
- */
-function initNavigationDots() {
-    const dots = document.querySelectorAll('.nav-dot');
-    const container = document.querySelector('.horizontal-scroll');
-
-    dots.forEach(dot => {
-        dot.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            if (targetSection && container) {
-                container.scrollTo({
-                    top: targetSection.offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-}
-
-/**
  * Mouse Parallax Effect
  */
 function initMouseParallax() {
@@ -234,7 +197,7 @@ function initMouseParallax() {
 }
 
 /**
- * Smooth scroll for anchor links - scroll container instead of window
+ * Smooth scroll for anchor links in the vertical document
  */
 const container = document.querySelector('.horizontal-scroll');
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -245,10 +208,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const targetSection = document.querySelector(targetId);
         if (targetSection && container) {
-            container.scrollTo({
-                top: targetSection.offsetTop,
-                behavior: 'smooth'
-            });
+            targetSection.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
         }
     });
 });

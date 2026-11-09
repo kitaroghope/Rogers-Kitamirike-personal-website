@@ -695,3 +695,30 @@ section {
         transform: none !important;
     }
 }
+
+/* Resume layout refinements */
+section[id] { scroll-margin-top: 80px; }
+.hero-section { padding-block: 112px 64px; }
+.hero-subtitle small { display: block; margin-top: 12px; line-height: 1.7; }
+#typed-text { display: inline-block; min-height: 1.6em; }
+.skill-card h3 { color: var(--primary-navy); font-size: 1.25rem; margin-bottom: 12px; }
+.skill-card p { margin-bottom: 0; }
+.project-content { height: 100%; display: flex; flex-direction: column; align-items: flex-start; }
+.project-content h3 { font-size: 1.4rem; overflow-wrap: anywhere; }
+.project-category { color: var(--medium-gray); font-size: 0.85rem; margin-bottom: 12px; }
+.project-content .project-tech { margin-top: auto; padding-top: 8px; }
+.project-tech .badge { white-space: normal; text-align: left; }
+.experience-item ul { padding-left: 1.25rem; }
+.experience-item li + li { margin-top: 10px; }
+#experience > .container { max-width: 1000px; }
+#experience .experience-timeline { margin-bottom: 48px; }
+.education-item h3 { font-size: 1.3rem; margin-top: 8px; }
+.education-item p:last-child { margin-bottom: 0; }
+@media (max-width: 768px) {
+    .hero-section { padding-block: 112px 48px; }
+    .hero-image img { max-width: 100%; }
+    .about-image img { max-width: min(300px, 100%); }
+    #about .row.mb-4 > .col-6 { width: 100%; }
+    .experience-item { padding-left: 0.5rem; }
+    .hero-subtitle br { display: none; }
+}

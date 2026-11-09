@@ -752,9 +752,10 @@ body {
     margin: 0 auto;
 }
 
-.skills-container {
+.skills-container,
+.skills-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 30px;
     margin-bottom: 50px;
 }
@@ -909,7 +910,7 @@ body {
 
 .projects-showcase {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 30px;
     margin-bottom: 40px;
 }
@@ -1052,7 +1053,7 @@ body {
 
 .timeline {
     position: relative;
-    padding-left: 50%;
+    padding-left: 36px;
 }
 
 .timeline-item {
@@ -1062,7 +1063,7 @@ body {
 
 .timeline-marker {
     position: absolute;
-    left: -50px;
+    left: -36px;
     top: 0;
     display: flex;
     flex-direction: column;
@@ -1092,7 +1093,7 @@ body {
     border: 1px solid var(--glass-border);
     border-radius: 16px;
     padding: 24px;
-    margin-left: 30px;
+    margin-left: 0;
     transition: all 0.3s;
 }
 
@@ -1161,7 +1162,7 @@ body {
 
 .education-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 30px;
 }
 
@@ -1283,7 +1284,7 @@ body {
     height: 300px;
     background: var(--accent-purple);
     bottom: -50px;
-    left: -50px;
+    left: -36px;
 }
 
 .contact-wrapper {
@@ -1456,12 +1457,13 @@ textarea.form-control {
    Responsive Design
    ========================================== */
 @media (max-width: 1200px) {
-    .skills-container {
-        grid-template-columns: repeat(2, 1fr);
+    .skills-container,
+.skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .projects-showcase {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
@@ -1498,7 +1500,7 @@ textarea.form-control {
     }
 
     .education-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .nav-dots {
@@ -1543,6 +1545,7 @@ textarea.form-control {
     }
 
     .skills-container,
+.skills-grid,
     .projects-showcase,
     .education-grid {
         grid-template-columns: 1fr;
@@ -1557,7 +1560,7 @@ textarea.form-control {
     }
 
     .timeline-content {
-        margin-left: 20px;
+        margin-left: 0;
     }
 
     .hero-stats {
@@ -1649,3 +1652,47 @@ textarea.form-control {
     outline: 2px solid var(--accent-teal);
     outline-offset: 2px;
 }
+
+/* Resume content: readable cards and a single, full-width timeline. */
+body { line-height: 1.6; }
+.horizontal-scroll { overflow: clip; }
+.section { scroll-margin-top: 72px; }
+.skills-grid > *, .projects-showcase > *, .about-content { min-width: 0; }
+.skill-card h3 { font-size: 1.2rem; margin-bottom: 12px; }
+.skill-card p, .timeline-content li { color: var(--text-secondary); line-height: 1.75; }
+.skill-card p { font-size: 0.95rem; }
+.timeline::before { content: ''; position: absolute; left: 9px; top: 8px; bottom: 24px; width: 2px; background: var(--glass-border); }
+.timeline-content ul { padding-left: 1.25rem; }
+.timeline-content li + li { margin-top: 12px; }
+.timeline-content:hover { transform: none; }
+.project-card-large { height: 100%; }
+.project-info { height: 100%; display: flex; flex-direction: column; align-items: flex-start; }
+.project-info .project-category { line-height: 1.5; }
+.project-info .project-tech { margin-top: auto; }
+.project-info .btn { margin-top: 20px; }
+.project-info h3, .education-card h3 { overflow-wrap: anywhere; }
+.about-image img { display: block; height: auto; }
+.experience-badge { width: 140px; height: 140px; }
+.experience-badge .text { max-width: 110px; line-height: 1.5; }
+.experience-badge .years { margin-bottom: 6px; }
+.hero-subtitle { min-height: 2.8em; }
+.hero-content > .about-text { margin-top: 28px; margin-bottom: 0; }
+.education-card > span { display: block; color: var(--accent-teal); margin-bottom: 14px; font-size: 0.9rem; }
+.education-card p { margin-top: 12px; }
+@media (max-width: 992px) {
+    .experience-badge { width: 120px; height: 120px; }
+}
+@media (max-width: 768px) {
+    .container { width: 100%; padding-inline: 24px; }
+    .section { min-height: auto; }
+    .section-hero { padding-top: 96px; }
+    .section-header { margin-bottom: 32px; }
+    .section-header .section-title { font-size: clamp(1.75rem, 7vw, 2.5rem); }
+    .timeline::before { left: 9px; }
+    .timeline-content { padding: 20px; }
+    .skill-card { padding: 24px; }
+    .about-image-wrapper { margin-bottom: 24px; }
+    .contact-icon { flex-shrink: 0; }
+    .contact-item a { overflow-wrap: anywhere; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

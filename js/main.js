@@ -20,10 +20,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (document.getElementById('typed-text')) {
         const typed = new Typed('#typed-text', {
             strings: [
-                'Full Stack Developer',
-                'Web Application Developer',
+                'Backend & Full-Stack Engineer',
+                'Web & Mobile Application Developer',
                 'Problem Solver',
-                'Tech Enthusiast',
+                'Open-Source Developer',
                 'Software Engineer'
             ],
             typeSpeed: 60,
@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
+            if (targetId === '#') { window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
             const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
